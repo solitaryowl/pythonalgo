@@ -1,0 +1,39 @@
+#https://www.algoexpert.io/questions/Sorted%20Squared%20Array
+def swap(array,i,j):
+	x=array[i]
+	y=array[j]
+	array[i] = y
+	array[j] = x
+	
+
+def sortedSquaredArray(array):
+    # Write your code here.
+	k=len(array)-1
+	result=[]
+	for i in range(0,len(array)):
+		if array[i] >=0:
+			k=i
+			break
+			
+	if k == 0 | k==len(array)-1 | len(array)==1:
+		for i in range(0,len(array)):
+			result.append(array[i]*array[i])
+	
+	else:
+		i = k-1
+		j = k
+		while(len(result) < len(array)):
+			if i < 0:
+				result.append(array[j]*array[j])
+				j=j+1
+			elif j==len(array):
+				result.append(array[i]*array[i])
+				i = i-1
+			elif abs(array[j]) > abs(array[i]):
+				result.append(array[i] * array[i])
+				i = i -1
+			else:
+				result.append(array[j]*array[j])
+				j = j + 1
+				
+    return result
