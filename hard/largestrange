@@ -1,0 +1,5 @@
+#https://www.algoexpert.io/questions/Largest%20Range
+
+def largestRange(array):
+    # Write your code here.
+    pass

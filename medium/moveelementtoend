@@ -1,0 +1,27 @@
+#https://www.algoexpert.io/questions/Move%20Element%20To%20End
+
+def swap(array,i,j):
+	x=array[i]
+	y=array[j]
+	array[i] = y
+	array[j] = x
+	
+	
+def moveElementToEnd(array, toMove):
+    # Write your code here.
+	
+	left = 0
+	right = len(array)-1
+	
+	while left < right:
+		if array[left] !=toMove:
+			left+=1;
+		elif array[right] == toMove:	
+			right-=1
+		else:
+			swap(array,left,right)
+			right-=1
+			left+=1
+	return array
+	
+    pass
